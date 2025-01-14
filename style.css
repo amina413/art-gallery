@@ -1,0 +1,1516 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit&family=Overpass:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tajawal:wght@200;300;400;500;700;800;900&family=Young+Serif&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tajawal:wght@200;300;400;500;700;800;900&family=Young+Serif&display=swap');
+
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: relative;
+    width: 100%;
+    height: 170px;
+    top: 0;
+    z-index: 1000;
+}
+
+#h-line {
+    width: 1200px;
+    height: 1px;
+    opacity: 0.2;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-logo {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: cairo;
+    color: white;
+}
+
+#v-line {
+    height: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 40px;
+    position: relative; /* Ensure positioning for dropdown */
+}
+
+.nav-links li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: cairo;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Underline effect for main nav links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance from text to the line */
+    left: 50%;
+    width: 0; /* Initially, the line width is 0 */
+    height: 2px; /* Line thickness */
+    background-color: white; /* Line color */
+    transition: width 0.3s ease; /* Smooth transition when expanding the line */
+    transform: translateX(-50%); /* Center the line horizontally */
+}
+
+/* On hover, expand the underline */
+.nav-links a:hover::after {
+    width: 50%; /* Full width of the link */
+}
+
+/* Dropdown Styling */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: black;
+    top: 100%;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 170px;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative; /* Allow for the underline effect */
+}
+
+/* Underline effect for dropdown links */
+.dropdown-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance from text to the line */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white; 
+    transition: width 0.3s ease; 
+    transform: translateX(-50%); 
+}
+
+/* On hover, expand the underline */
+.dropdown-content a:hover::after {
+    width: 50%; /* Full width of the link */
+}
+
+/* Show dropdown when clicked */
+.dropdown.show .dropdown-content {
+    display: block;
+   
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%; /* Ensure full width on mobile */
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    /*padding-top: 80px; */
+}
+
+.hero video {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-family: cairo;
+    font-weight: 300;
+    text-align: left;
+    margin-right: 500px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-right: 750px;
+    font-family: tajawal;
+}
+
+.hero a {
+    text-decoration: none;
+    background-color: #f0a500; /* Gold button */
+    color: black;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* Exhibits Section */
+.exhibits {
+    margin: 30px;
+    /*padding: 30px 40px;*/
+    text-align: left;
+}
+
+.exhibits h2 {
+    font-size: 70px;
+    margin-bottom: 30px;
+    font-family: cairo;
+    font-weight: 300;
+}
+
+.exhibit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Exhibit Item */
+.exhibit-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: auto;
+    margin: 10px;
+}
+
+/* Image Container */
+.exhibit-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.exhibit-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+/* Zoom effect on hover */
+.exhibit-item:hover .exhibit-img img {
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+/* Exhibit Description */
+.exhibit-info {
+    background: #fff; /* White background */
+    color: black;
+    padding: 10px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #ddd; /* Subtle divider */
+}
+
+.exhibit-info h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    font-family: "Playfair Display", serif;
+}
+
+.exhibit-info p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Make `egy-1` the largest and on the top-left */
+.exhibit-item:nth-child(1) {
+    grid-column: span 2; /* Make it span 2 columns */
+    grid-row: 1; /* Position on the first row */
+    width: 900px;
+    height: 90%;
+}
+
+.exhibit-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+    height: 600px; /* Regular height */
+    width: 400px;
+}
+
+.exhibit-item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+    /*height: 400px;*/
+}
+.exhibit-item:nth-child(4) {
+    grid-column: 2; 
+    grid-row: 2;
+    height: 350px;
+    margin-top: 18px; 
+    margin-left: 20px; 
+}
+
+.exhibit-item:nth-child(5) {
+    grid-column: 3; /* Position in the third column */
+    grid-row: 2; /* Position on the second row */
+    height: 600px;
+    margin-top: -50px; /* Position it slightly higher */
+}
+
+/* Position `artshop`, `ottoman-1`, and `kidsart` on the last row */
+.exhibit-item:nth-child(6) {
+    grid-column: 1; 
+    grid-row: 3; 
+    margin-top: 100px; 
+}
+
+.exhibit-item:nth-child(7) {
+    grid-column: 2; /* Position in the second column */
+    grid-row: 3; /* Position on the last row */
+    height: 500px; /* Regular height */
+    margin-top: 150px;
+}
+
+.exhibit-item:nth-child(8) {
+    grid-column: 3; 
+    grid-row: 3; 
+    height: 500px;
+    margin-top: 100px; 
+}
+/* Tags */
+.tag {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background-color: rgba(128, 128, 128, 0.615); 
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-block; /* Prevent it from stretching */
+    width: auto; 
+}
+
+.visit-gallery {
+    text-align: center;
+    color: white;
+    background-color: #2b2b2b;
+    padding: 80px 20px;
+}
+
+.visit-gallery h2 {
+    font-size: 36px;
+    font-family: 'Cairo';
+    margin-bottom: 20px;
+}
+
+.visit-gallery p {
+    font-size: 18px;
+    font-family: 'Tajawal';
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.category-box {
+    background-color: #444; 
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 500px;
+    width: 320px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+}
+.category-box img {
+    width: 100%; 
+    height: auto;
+    margin-bottom: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.category-box h3 {
+    font-size: 24px;
+    font-family: 'Cairo';
+    margin-bottom: 10px;
+    position: relative; 
+    display: inline-block;
+}
+.category-box h3::after {
+    content: ""; /* Add an empty pseudo-element for the underline */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust distance from the text */
+    width: 0; 
+    height: 2px; 
+    background-color: white; 
+    transition: width 0.3s ease;
+}
+.category-box:hover h3::after {
+    width: 100%; /* Full width on hover */
+}
+
+.category-box p {
+    font-size: 16px;
+    font-family: 'Tajawal';
+}
+
+.category-box:hover {
+    background-color: #555; /* Darker background on hover */
+    border: none;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+
+/* Background Image Section */
+.scroll-image {
+    position: relative; /* Make the background image fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; 
+    background: url('images/doha.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: 1; 
+}
+
+/* Body Spacing to Allow Scroll */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+.instagram-feed {
+    background-color: #1a1a1a; /* Charcoal black */
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.instagram-feed h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.instagram-scroll-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.instagram-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 90%; /* Adjust the width of the scrolling area */
+    padding: 10px;
+    gap: 20px;
+}
+
+.instagram-post {
+    display: flex;
+    flex-direction: column; /* Stacks content */
+    align-items: center; 
+    justify-content: flex-start; /* Aligns content at the top */
+    width: 300px; /* Consistent width for posts */
+    min-width: 300px; /* Prevents posts from collapsing */
+    height: 550px; /* Fixed height */
+    border-radius: 5px;
+    background-color: #333; /* Mimics Instagram post backgrounds */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    flex-shrink: 0; /* Prevents posts from shrinking */
+    cursor: pointer;
+}
+.instagram-post img {
+    width: 100%;
+    height: 70%; /* Proportional image height */
+    object-fit: cover;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.post-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-content {
+    width: 100%;
+    height: 30%; /* Occupies remaining space*/
+    color: white;
+    text-align: left;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    background-color: #444; /* Subtle contrast */
+}
+
+/* Profile Section */
+.profile {
+    position: absolute;
+    top: 15px; /* Adjusted for better placement */
+    left: 15px;
+    display: flex;
+    align-items: center; /* Aligns profile picture and username vertically */
+    gap: 10px; /* Space between profile picture and username */
+}
+
+.profile-pic {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    height: 70px;
+    width: 70px;
+    margin-left: 15px;
+    margin-top: 10px;
+ 
+
+}
+.profile-img {
+    border-radius: 50%;
+}
+.username {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Tajawal', sans-serif; /* Ensure font consistency */
+    white-space: nowrap; /* Prevents text wrapping */
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+.scroll-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* Adjust the responsiveness */
+@media (max-width: 768px) {
+    .instagram-scroll {
+        width: 100%;
+    }
+
+    .instagram-post {
+        width: 200px; /* Smaller boxes for smaller screens */
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-scroll {
+        padding: 0;
+    }
+
+    .instagram-post {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+
+/* Newsletter Overlay */
+.newsletter-overlay {
+    position: absolute; /* Ensures it sits on top of the image */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    width: 70%; /* Responsive adjustment */
+    margin-left: 180px;
+    margin-top: 100px;
+}
+
+.newsletter-overlay h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.newsletter-overlay p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Form Styles */
+#newsletter-form input[type="email"] {
+    width: 80%;
+    margin: auto;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#newsletter-form button {
+    padding: 12px 20px;
+    background-color:#1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#newsletter-form button:hover {
+    background-color: #d354009b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .newsletter-overlay {
+        padding: 20px;
+    }
+
+    .newsletter-overlay h2 {
+        font-size: 24px;
+    }
+
+    .newsletter-overlay p {
+        font-size: 14px;
+    }
+
+    .newsletter-form button {
+        font-size: 14px;
+    }
+}
+.gallery-section {
+    padding: 80px;
+    text-align: center;
+    background-color:black;
+    position: relative;
+    overflow: hidden; /* Ensures anything outside is hidden */
+    height: 1550px;
+}
+
+.gallery-header h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Cairo', sans-serif;
+    color: white;
+}
+
+.gallery-header p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-rows: repeat(3, auto);*/
+    gap: 20px;
+    position: relative;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.gallery-item:nth-child(2) {
+    grid-column: span 1; /* Make it span across both columns */
+    grid-row: span 1; /* Make it span two rows */
+    height: 500px ;
+}
+
+.persian-5 {
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.gallery-item.hidden {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Last 3 Images Overlay Effect */
+.gallery-item:nth-last-child(-n+3) {
+    position: relative;
+    overflow: hidden;
+}
+.gallery-item:nth-last-child(-n+3)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Adjusting Visibility for Last 3 Images */
+.gallery-item:nth-last-child(-n+3) img {
+   /* transform: translateY(20%);*/
+    filter: brightness(50%);
+}
+/* Explore button styles */
+.explore-section {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Ensure it's above the images */
+}
+
+.explore-btn {
+    background-color:white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100px;
+    height: 50px;
+}
+
+.explore-btn:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+.footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    height: 450px;
+}
+
+.footer-container {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Cairo', sans-serif;
+    color: #f5f5f5;
+}
+.footer p {
+    color: white;
+    background-color: black;
+    font-size: 10px;
+    margin-top: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #f5f5f5;
+}
+.last-line{
+    width: 1300px;
+    height: 0.3px;
+    margin-top: 80px;
+}
+.last-line3{
+    width: 0.1px;
+}
+.follow{
+    display: flex;
+}
+.last{
+    height: 1px;
+    width: 400px;
+    margin-bottom: 10px;
+    margin: auto;
+    margin-left: 20px;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 15px;
+    }
+}
+.legal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-left: 450px;
+    
+}
+
+.legal ul li {
+    margin-bottom: 10px;
+    margin-left:60px;
+    
+}
+
+.legal ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 10px;
+    transition: color 0.3s ease;
+}
+
+.legal ul li a:hover {
+    color: #f5f5f5;
+}
+.nav-logo2{
+    font-size:30px;
+    font-weight: 500;
+    font-family: cairo;
+    color: white;
+    margin-top: 30px;
+}
+.v-line2{
+    height: 20px;
+}
+@media (max-width: 768px) {
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar ul {
+        font-size: 14px;
+    }
+}
+
+
+
+/* exhibit.html*/
+/* Exhibits Section */
+.exhibition {
+    margin: 30px;
+    /*padding: 30px 40px;*/
+    text-align: left;
+}
+
+.exhibition h2 {
+    font-size: 70px;
+    margin-bottom: 30px;
+    font-family: cairo;
+    font-weight: 300;
+}
+
+.exhibition-grid {
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Exhibit Item */
+.exhibition-item {
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: auto;
+    margin: 10px;
+}
+
+/* Image Container */
+.exhibition-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.exhibition-img img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+/* Zoom effect on hover */
+.exhibition-item:hover .exhibition-img img {
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+/* Exhibit Description */
+.exhibition-info {
+    background: #fff; /* White background */
+    color: black;
+    padding: 10px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #ddd; /* Subtle divider */
+}
+
+.exhibition-info h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    font-family: "Playfair Display", serif;
+}
+
+.exhibition-info p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+/* gallery.html*/
+/* Header Section */
+.gallery-header {
+    text-align: center;
+    padding: 120px;
+    
+}
+
+.gallery-header h1 {
+    font-size: 60px;
+    margin: 10px 0;
+    color:#1a1a1a;
+
+}
+
+.gallery-header p {
+    color:white;
+    font-size: 1.2rem;
+}
+
+/* Collections Section */
+.collections-section {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 800px;
+   
+}
+
+.collections-section h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+.collections-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    background-color:black;
+    padding-top: 60px;
+}
+
+.collection-item {
+    width: 250px;
+    text-align: center;
+}
+
+.collection-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 30px;
+
+}
+
+.collection-item h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.collection-item p {
+    color: #666;
+}
+
+/* Explore the Gallery Section */
+.gallery-section2 {
+    padding: 80px;
+    text-align: center;
+    background-color:black;
+    position: relative;
+    overflow: hidden; 
+   
+}
+.gallery-section2 h3{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 80px;
+}
+.gallery-grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.gallery-item2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item2 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.gallery-item2:nth-child(2) {
+    grid-column: span 1; /* Make it span across both columns */
+    grid-row: span 1; /* Make it span two rows */
+    height: 500px ;
+}
+
+.persian-5 {
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.gallery-item:nth-last-child(-n+3) {
+    position: relative;
+    overflow: hidden;
+}
+.gallery-item:nth-last-child(-n+3)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.scroll-image2 {
+    position: relative; /* Make the background image fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Full viewport height */
+    background: url('images/exhibitors.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: 1; /* Behind the about-us section */
+}
+.egypt {
+    background-color: #1a1a1a; /* Charcoal black */
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    height: 700px;
+}
+
+.egypt h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.egypt-scroll {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    gap: 20px;
+    padding: 10px;
+}
+
+.egyptian-art {
+    flex-shrink: 0; /* Prevents shrinking of items */
+    width: 300px; /* Consistent width for artworks */
+    height: 500px; /* Consistent height for artworks */
+    border-radius: 5px;
+    background-color: #333; /* Background for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.egyptian-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 5px; /* Matches the container's border radius */
+}
+.scroll-image3 {
+    position: relative; /* Make the background image fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Full viewport height */
+    background: url('images/artt.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: 1; /* Behind the about-us section */
+}
+.ottoman {
+    background-color: #1a1a1a; /* Charcoal black */
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    height: 700px;
+}
+
+.ottoman h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.ottoman-scroll {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    gap: 20px;
+    padding: 10px;
+}
+
+.ottoman-art {
+    flex-shrink: 0; /* Prevents shrinking of items */
+    width: 300px; /* Consistent width for artworks */
+    height: 500px; /* Consistent height for artworks */
+    border-radius: 5px;
+    background-color: #333; /* Background for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ottoman-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 5px; /* Matches the container's border radius */
+}
+.pers {
+    background-color: #1a1a1a; /* Charcoal black */
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    height: 700px;
+}
+
+.pers h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.pers-scroll {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    gap: 20px;
+    padding: 10px;
+}
+
+.pers-art {
+    flex-shrink: 0; /* Prevents shrinking of items */
+    width: 300px; /* Consistent width for artworks */
+    height: 500px; /* Consistent height for artworks */
+    border-radius: 5px;
+    background-color: #333; /* Background for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.pers-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 5px; /* Matches the container's border radius */
+}
+.islm {
+    background-color: #1a1a1a; /* Charcoal black */
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    height: 700px;
+}
+
+.islm h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.islm-scroll {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    gap: 20px;
+    padding: 10px;
+}
+
+.islm-art {
+    flex-shrink: 0; /* Prevents shrinking of items */
+    width: 300px; /* Consistent width for artworks */
+    height: 500px; /* Consistent height for artworks */
+    border-radius: 5px;
+    background-color: #333; /* Background for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.islm-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 5px; /* Matches the container's border radius */
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.exhibition-grid2 {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 40px; /* Space between rows */
+    margin: 20px auto; /* Center grid within its container */
+    max-width: 1200px; /* Limit the grid width */
+}
+
+.exhibition-item2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: one for the image, one for the description */
+    gap: 100px; /* Space between image and text */
+    align-items: center; /* Center content vertically */
+}
+
+.exhibition-item2:nth-child(even) {
+    grid-template-columns: 1fr 1fr; /* Swap columns for even rows */
+    direction: rtl; /* Reverse the content flow */
+}
+
+.exhibition-item2:nth-child(even) .exhibition-info2 {
+    direction: ltr; /* Ensure text direction remains normal for description */
+}
+
+.exhibition-img2 img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Prevent distortion */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.exhibition-info2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically align text */
+    line-height: 1.5;
+    max-width: 400px; /* Limit text width */
+    text-align: left;
+}
+
+.exhibition-info2 h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.exhibition-info2 p {
+    margin: 0;
+    font-size: 16px;
+}
+.exhibition2 h2 {
+    font-size: 80px;
+    margin-bottom: 30px;
+    font-family: cairo;
+    font-weight: 300;
+    text-align: center;
+
+}
+.scroll-image4 {
+    position: relative; /* Make the background image fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Full viewport height */
+    background: url('images/visit.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: 1; /* Behind the about-us section */
+}
+/* General Styles */
+
+
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.gallery-header2 {
+    font-size: 60px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: white; /* Gold */
+}
+
+header p {
+    font-size: 18px;
+    color: #dcdcdc; 
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 28px;
+    color: white; 
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.container {
+background-color: #1a1a1a;
+}
+/* Visit Us Section */
+.visit-us {
+    background-color: #333333; /* Dark charcoal */
+    padding: 20px;
+   
+}
+
+.visit-us p {
+    font-size: 16px;
+    color: #dcdcdc; /* Light gray */
+    margin-bottom: 15px;
+}
+
+.visit-us strong {
+    color: #ffffff; /* White for emphasis */
+}
+
+/* Painting Classes and Workshops */
+.painting-classes, .family-workshops {
+    padding: 20px;
+   
+}
+
+section p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #dcdcdc; /* Light gray */
+}
+
+section ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+section ul li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Highlights and Text */
+strong {
+    color: white; /* Gold for emphasis */
+}
+.gallery-header2 {
+    text-align: center;
+    padding: 70px;
+    
+}
+
+.gallery-header2 h1 {
+    font-size: 60px;
+    margin:  0;
+    color:white;
+
+}
+
+.gallery-header2 p {
+    color:white;
+    font-size: 20px;
+    margin-top: 2px;
+  
+}
+
