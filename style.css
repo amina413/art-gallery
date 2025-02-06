@@ -310,10 +310,17 @@ html {
     /*height: 400px;*/
 }
 .exhibit-item:nth-child(4) {
+<<<<<<< HEAD
     grid-column: 2; /* Position in the second column */
     grid-row: 2; /* Position on the second row 
     margin-top: 18px; /* Position it slightly higher */
     margin-left: 20px; /* Space between items */
+=======
+    grid-column: 2; 
+    grid-row: 2;
+    margin-top: 18px; 
+    margin-left: 20px; 
+>>>>>>> Updated CSS styles
 }
 
 .exhibit-item:nth-child(5) {
