@@ -43,13 +43,13 @@ function moveToSlide(index) {
 }
 
 function updateDots() {
-  const dots = document.querySelectorAll('.dot');
+  const dots = document.querySelectorAll('.dot'); //find out meaning of querySelectorAll
   dots.forEach((dot, index) => {
     if (index === currentIndex) {
       dot.classList.add('active');
     } else {
       dot.classList.remove('active');
-    }
+    } 
   });
 }
 document.getElementById("newsletter-form").addEventListener("submit", function(event) {
