@@ -5,29 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
      <!-- Navbar -->
-     <div class="navbar">
-        <nav>
-            <div class="nav-logo">
+<div class="navbar">
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
                 Dar al-Fann
                 <img id="v-line" src="images/line-3.png" alt="Vertical Line">
                 دار الفن
-            </div>
-            <div class="horizontal">
-                <img id="h-line" src="images/horizontal-line.png" alt="Horizontal Line">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="visit.html">Visit</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="exhibit.html">Exhibitions and Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="shop.html">Shop</a></li>
-            </ul>
-        </nav>
-    </div>
+            </a>
+            
+        </div>
+        <div class="horizontal">
+            <img id="h-line" src="images/horizontal-line.png" alt="Horizontal Line">
+        </div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Visit</a>
+                <div class="dropdown-content">
+                    <a href="visit.html">Vist</a>
+                    <a href="visit.html">Tours</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Collections</a>
+                <div class="dropdown-content">
+                    <a href="gallery.html">Collections</a>
+                    <a href="gallery.html">Exhibitors Picks</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Exhibitions and Events</a>
+                <div class="dropdown-content">
+                    <a href="exhibit.html">Current Exhibitions</a>
+                    <a href="exhibit.html">Upcoming Events</a>
+                    <a href="exhibit.html">Archive</a>
+                </div>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
     <div class="exhibition2">
         <h2>Exhibitors Picks</h2>
         <div class="exhibition-grid2">
@@ -358,10 +379,15 @@
                 <div class="follow"><h3>FOLLOW US</h3>
                     <img src="images/horizontal-line.png" class="last">
                 </div>
-                <ul>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <!-- <ul>
                     <li><a href="#">Private events and film shoots</a></li>
                     <li><a href="#">Follow us</a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
         <img src="images/horizontal-line.png" class="last-line">

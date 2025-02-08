@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tajawal:wght@200;300;400;500;700;800;900&family=Young+Serif&display=swap');
 
+
 /* Reset */
 body, html {
     margin: 0;
@@ -223,9 +224,10 @@ html {
 
 .exhibits h2 {
     font-size: 70px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-family: cairo;
     font-weight: 300;
+    margin-left: 30px;
 }
 
 .exhibit-grid {
@@ -244,6 +246,7 @@ html {
     border-radius: 10px;
     height: auto;
     margin: 10px;
+    margin-top: 80px;
 }
 
 /* Image Container */
@@ -279,9 +282,10 @@ html {
 }
 
 .exhibit-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     margin: 5px 0;
-    font-family: "Playfair Display", serif;
+    font-family: cairo;
+    font-weight: 400;
 }
 
 .exhibit-info p {
@@ -300,7 +304,7 @@ html {
 .exhibit-item:nth-child(2) {
     grid-column: 3;
     grid-row: 1;
-    height: 600px; /* Regular height */
+    height: 700px; /* Regular height */
     width: 400px;
 }
 
@@ -319,8 +323,8 @@ html {
 .exhibit-item:nth-child(5) {
     grid-column: 3; /* Position in the third column */
     grid-row: 2; /* Position on the second row */
-    height: 600px;
-    margin-top: -50px; /* Position it slightly higher */
+    height: 700px;
+    /* margin-top: 50px; Position it slightly higher */
 }
 
 /* Position `artshop`, `ottoman-1`, and `kidsart` on the last row */
@@ -334,14 +338,14 @@ html {
     grid-column: 2; /* Position in the second column */
     grid-row: 3; /* Position on the last row */
     height: 500px; /* Regular height */
-    margin-top: 150px;
+    /* margin-top: 150px; */
 }
 
 .exhibit-item:nth-child(8) {
     grid-column: 3; 
     grid-row: 3; 
     height: 500px;
-    margin-top: 100px; 
+    /* margin-top: 100px;  */
 }
 /* Tags */
 .tag {
@@ -488,10 +492,22 @@ body {
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 90%; /* Adjust the width of the scrolling area */
-    padding: 10px;
+    padding: 50px;
     gap: 20px;
 }
 
+.ig {
+    display: flex;
+    justify-content: space-between;
+    font-family: cairo;
+    font-size: 1rem;
+}
+#hh-line{
+    width: 500px;
+    height: 1px;
+    opacity: 0.2;
+    margin-top: 30px;
+}
 .instagram-post {
     display: flex;
     flex-direction: column; /* Stacks content */
@@ -672,6 +688,17 @@ body {
     flex-direction: column;
 }
 
+#newsletter-form input[type="text"] {
+    width: 80%;
+    margin: auto;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
 #newsletter-form button {
     padding: 12px 20px;
     background-color:#1a1a1a;
@@ -878,6 +905,23 @@ body {
 .follow{
     display: flex;
 }
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 30px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d35400; /* Change to your preferred hover color */
+}
+
 .last{
     height: 1px;
     width: 400px;
