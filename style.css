@@ -96,65 +96,90 @@ html {
 }
 
 /* Dropdown Styling */
-.dropdown{
-    position: relative;
+.nav-links {
+    display: flex;
+    justify-content: space-around; /* Spread items evenly */
+    align-items: center;
+    list-style: none;
+    padding: 0;
 }
 
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    position: static;
+}
+
+/* Dropdown content spans full width */
 .dropdown-content {
     display: none;
+    position: absolute;
+    top: 300%;
+    left: 0;
+    max-width: 100vw;    
     background-color: black;
-    top: 100%;
-    z-index: 1;
+    z-index: 1000;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    height: 170px;
+    padding: 20px;
+    gap: 300px; /* Spacing */
 }
 
+/* Ensure dropdown opens fully */
+.dropdown-content.show {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}
+
+/* Wrapper inside dropdown-content */
+.dropdown-content .dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 100px; /* Space between image and links */
+    width: 100%;
+}
+
+/* Permanent Image (only for "Visit" dropdown) */
+.dropdown-content img {
+    width: 250px; /* Adjust size */
+    height: auto;
+    object-fit: cover;
+}
+
+/* Links Section */
+.dropdown-content .links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between links */
+}
+
+/* Dropdown Links */
 .dropdown-content a {
     padding: 10px 15px;
     color: white;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    position: relative; /* Allow for the underline effect */
+    display: block;
+    font-size: 18px;
+    position: relative; /* Needed for underline effect */
 }
 
-/* Underline effect for dropdown links */
+/* Underline effect */
 .dropdown-content a::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Distance from text to the line */
+    bottom: -5px;
     left: 50%;
-    width: 0; /* Initially, the line width is 0 */
-    height: 2px; /* Line thickness */
-    background-color: white; /* Line color */
-    transition: width 0.3s ease; /* Smooth transition when expanding the line */
-    transform: translateX(-50%); /* Center the line horizontally */
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
 }
 
-/* On hover, expand the underline */
 .dropdown-content a:hover::after {
-    width: 50%; /* Full width of the link */
-}
-
-/* Show dropdown when clicked */
-.dropdown.show .dropdown-content {
-    display: block;
-   
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .dropdown-content {
-        position: static;
-        width: 100%; /* Ensure full width on mobile */
-    }
+    width: 50%;
 }
 
 /* Hero Section Styles */
@@ -1493,33 +1518,156 @@ section h2 {
 .container {
 background-color: #1a1a1a;
 }
+
 /* Visit Us Section */
+
 .visit-us {
-    background-color: #333333; /* Dark charcoal */
     padding: 20px;
+    background-color: black;
+  
+
+}
+
+.visit-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
    
+}
+
+.v1 {
+    flex: 1;
+    padding: 20px;
+    line-height: 40px;
+}
+
+.visit-us h2 {
+    font-family: cairo;
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 600px;
 }
 
 .visit-us p {
     font-size: 16px;
-    color: #dcdcdc; /* Light gray */
+    color: #dcdcdc;
     margin-bottom: 15px;
 }
 
 .visit-us strong {
-    color: #ffffff; /* White for emphasis */
+    color: #ffffff;
+}
+
+#v {
+    /* width: 30%; */
+    width: 400px;
+    max-width: 400px;
+     /* height: auto;  */
+    height: 500px;
+    border-radius: 8px;
+    
+}
+
+.painting-classes {
+    padding: 20px;
+    background-color: black;
+}
+
+.painting-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.p1 {
+    flex: 1;
+    padding: 20px;
+    line-height: 40px;
+}
+
+.painting-classes p {
+    font-size: 16px;
+    color: #dcdcdc;
+    margin-bottom: 15px;
+}
+
+.painting-classes h2 {
+    font-family: cairo;
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 450px;
+}
+
+.painting-classes strong {
+    color: #ffffff;
+}
+
+#p-img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.family-workshops {
+    padding: 20px;
+    background-color: black;
+}
+
+.workshops-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.w1 {
+    flex: 1;
+    padding: 20px;
+    line-height: 40px;
+}
+
+.family-workshops p {
+    font-size: 16px;
+    color: #dcdcdc;
+    margin-bottom: 15px;
+}
+
+.family-workshops strong {
+    color: #ffffff;
+}
+
+.family-workshops h2 {
+    font-family: cairo;
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 500px;
+}
+#w-img {
+    width: 50%;
+    max-width: 400px;
+    height: 500px;
+    border-radius: 8px;
 }
 
 /* Painting Classes and Workshops */
-.painting-classes, .family-workshops {
+/* .painting-classes, .family-workshops {
     padding: 20px;
-   
+   background-color: black;
 }
 
+#v {
+    height: 400px;
+    width: 350px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
 section p {
     font-size: 16px;
     margin-bottom: 15px;
-    color: #dcdcdc; /* Light gray */
+    color: #dcdcdc; /* Light gray 
 }
 
 section ul {
@@ -1531,7 +1679,7 @@ section ul li {
     list-style-type: disc;
     margin-bottom: 10px;
     color: #ffffff;
-}
+} */
 
 /* Highlights and Text */
 strong {
