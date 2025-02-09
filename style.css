@@ -1705,235 +1705,241 @@ strong {
     margin-top: 2px;
   
 }
-
-/* For Large Screens (≥ 1200px) */
-@media (min-width: 1200px) {
-    .navbar {
-        height: 150px;
-    }
-    .nav-logo {
-        font-size: 50px;
-    }
-    .nav-links a {
-        font-size: 20px;
-    }
-    #h-line {
-        width: 1400px;
-    }
-}
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .navbar {
-        height: 130px;
-    }
-    .nav-logo {
-        font-size: 35px;
-    }
-    .nav-links a {
-        font-size: 16px;
-    }
-    #h-line {
-        width: 100%;
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
     .navbar {
-        height: 100px;
+        height: 100px; /* Reduce height for phones */
+        padding: 0.5rem; /* Reduce padding */
     }
+
     .nav-logo {
-        font-size: 25px;
+        font-size: 25px; /* Smaller logo */
     }
+
     .nav-links {
-        padding: 20px;
+        flex-direction: column; /* Stack links vertically */
+        padding: 10px; /* Reduce padding */
     }
+
     .nav-links a {
-        font-size: 14px;
+        font-size: 14px; /* Smaller font size */
+        margin: 0.5rem 0; /* Add spacing between links */
     }
+
     #h-line {
-        width: 100%;
+        width: 100%; /* Full width for the line */
     }
 }
-/* For Large Screens (≥ 1200px) */
 @media (min-width: 1200px) {
-    .hero h1 {
-        font-size: 60px;
-        margin-right: 600px;
+    .navbar {
+        height: 150px; /* Increase height for large screens */
     }
-    .hero p {
-        font-size: 1.5rem;
-        margin-right: 800px;
+
+    .nav-logo {
+        font-size: 50px; /* Larger logo */
+    }
+
+    .nav-links a {
+        font-size: 20px; /* Larger font size */
+    }
+
+    #h-line {
+        width: 1400px; /* Wider line */
     }
 }
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-        margin-right: 300px;
-    }
-    .hero p {
-        font-size: 1.2rem;
-        margin-right: 400px;
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
+    .hero {
+        height: 300px; /* Reduce height for phones */
+    }
+
     .hero h1 {
-        font-size: 30px;
-        margin-right: 20px;
-        text-align: center;
+        font-size: 24px; /* Smaller heading */
+        margin-right: 0; /* Remove margin */
+        text-align: center; /* Center text */
     }
+
     .hero p {
-        font-size: 1rem;
-        margin-right: 20px;
-        text-align: center;
+        font-size: 14px; /* Smaller paragraph */
+        margin-right: 0; /* Remove margin */
+        text-align: center; /* Center text */
     }
+
     .hero a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.5rem 1rem; /* Smaller button */
+        font-size: 14px; /* Smaller font size */
     }
 }
-/* For Large Screens (≥ 1200px) */
 @media (min-width: 1200px) {
-    .exhibits h2 {
-        font-size: 80px;
+    .hero {
+        height: 600px; /* Increase height for large screens */
     }
-    .exhibit-grid {
-        grid-template-columns: repeat(4, 1fr);
+
+    .hero h1 {
+        font-size: 60px; /* Larger heading */
+        margin-right: 600px; /* Adjust margin */
+    }
+
+    .hero p {
+        font-size: 1.5rem; /* Larger paragraph */
+        margin-right: 800px; /* Adjust margin */
+    }
+
+    .hero a {
+        padding: 1rem 2rem; /* Larger button */
+        font-size: 1.2rem; /* Larger font size */
     }
 }
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .exhibits h2 {
-        font-size: 50px;
-    }
-    .exhibit-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
     .exhibits h2 {
-        font-size: 40px;
+        font-size: 30px; /* Smaller heading */
+        margin-left: 10px; /* Adjust margin */
     }
+
     .exhibit-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column for phones */
+        gap: 10px; /* Reduce gap */
     }
+
     .exhibit-item {
-        margin: 5px;
+        margin: 5px; /* Reduce margin */
+    }
+
+    .exhibit-item:nth-child(1),
+    .exhibit-item:nth-child(2),
+    .exhibit-item:nth-child(3),
+    .exhibit-item:nth-child(4),
+    .exhibit-item:nth-child(5),
+    .exhibit-item:nth-child(6),
+    .exhibit-item:nth-child(7),
+    .exhibit-item:nth-child(8) {
+        grid-column: span 1; /* Reset grid spans */
+        width: 100%; /* Full width */
+        height: auto; /* Auto height */
     }
 }
-/* For Large Screens (≥ 1200px) */
 @media (min-width: 1200px) {
-    .category-box {
-        width: 350px;
-        height: 550px;
+    .exhibits h2 {
+        font-size: 80px; /* Larger heading */
+    }
+
+    .exhibit-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns for large screens */
+    }
+
+    .exhibit-item:nth-child(1) {
+        grid-column: span 2; /* Span two columns */
+        width: 900px; /* Larger width */
+    }
+
+    .exhibit-item:nth-child(2),
+    .exhibit-item:nth-child(5) {
+        height: 700px; /* Larger height */
     }
 }
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .category-box {
-        width: 250px;
-        height: 450px;
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
-    .category-box {
-        width: 100%;
-        height: 400px;
+    .visit-gallery h2 {
+        font-size: 24px; /* Smaller heading */
     }
+
+    .visit-gallery p {
+        font-size: 14px; /* Smaller paragraph */
+    }
+
     .category-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column for phones */
+    }
+
+    .category-box {
+        width: 100%; /* Full width */
+        height: 300px; /* Reduce height */
     }
 }
-/* For Large Screens (≥ 1200px) */
 @media (min-width: 1200px) {
-    .instagram-post {
-        width: 350px;
-        height: 600px;
+    .visit-gallery h2 {
+        font-size: 48px; /* Larger heading */
+    }
+
+    .visit-gallery p {
+        font-size: 1.2rem; /* Larger paragraph */
+    }
+
+    .category-box {
+        width: 350px; /* Larger width */
+        height: 550px; /* Larger height */
     }
 }
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .instagram-post {
-        width: 250px;
-        height: 500px;
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
-    .instagram-post {
-        width: 200px;
-        height: 400px;
+    .instagram-feed h2 {
+        font-size: 24px; /* Smaller heading */
     }
+
+    .instagram-post {
+        width: 150px; /* Smaller width */
+        height: 250px; /* Smaller height */
+    }
+
     .instagram-scroll {
-        padding: 10px;
+        padding: 10px; /* Reduce padding */
     }
 }
-/* For Large Screens (≥ 1200px) */
 @media (min-width: 1200px) {
-    .footer-container {
-        grid-template-columns: repeat(3, 1fr);
+    .instagram-feed h2 {
+        font-size: 48px; /* Larger heading */
+    }
+
+    .instagram-post {
+        width: 350px; /* Larger width */
+        height: 600px; /* Larger height */
     }
 }
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
-    .footer-container {
-        grid-template-columns: 1fr;
+    .footer {
+        height: auto; /* Auto height */
+        padding: 20px; /* Reduce padding */
     }
+
+    .footer-container {
+        grid-template-columns: 1fr; /* Single column for phones */
+        text-align: center; /* Center text */
+    }
+
     .legal ul {
-        flex-direction: column;
-        margin-left: 0;
+        flex-direction: column; /* Stack legal links vertically */
+        margin-left: 0; /* Remove margin */
     }
+
     .legal ul li {
-        margin-left: 0;
+        margin-left: 0; /* Remove margin */
     }
 }
-/* For Large Screens (≥ 1200px) */
 @media (min-width: 1200px) {
-    .exhibition h2, .gallery-header h1 {
-        font-size: 80px;
+    .footer {
+        height: 500px; /* Larger height */
     }
-    .exhibition-grid, .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
+
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
     }
 }
-
-/* For Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .exhibition h2, .gallery-header h1 {
-        font-size: 50px;
-    }
-    .exhibition-grid, .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* For Phones (≤ 767px) */
 @media (max-width: 767px) {
-    .exhibition h2, .gallery-header h1 {
-        font-size: 40px;
+    .dropdown-content {
+        width: 100%; /* Full width */
+        left: 0; /* Align to the left */
+        padding: 10px; /* Reduce padding */
     }
-    .exhibition-grid, .gallery-grid {
-        grid-template-columns: 1fr;
+
+    .dropdown-content .dropdown-wrapper {
+        flex-direction: column; /* Stack content vertically */
+        gap: 20px; /* Reduce gap */
+    }
+
+    .dropdown-content img {
+        width: 100%; /* Full width for images */
+    }
+}
+@media (min-width: 1200px) {
+    .dropdown-content {
+        width: 1100px; /* Wider dropdown */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
     }
 }
