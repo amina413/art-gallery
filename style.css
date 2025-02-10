@@ -573,6 +573,7 @@ body {
     font-family: 'Tajawal', sans-serif;
     font-size: 14px;
     background-color: #444; /* Subtle contrast */
+    padding-left: 20px;
 }
 
 /* Profile Section */
@@ -685,7 +686,7 @@ body {
     color: white;
     border-radius: 10px;
     width: 70%; /* Responsive adjustment */
-    margin-left: 180px;
+    margin-left: 350px;
     margin-top: 100px;
 }
 
@@ -918,7 +919,7 @@ body {
 }
 
 .footer-column ul li a:hover {
-    color: #f5f5f5;
+    color: #d35400;
 }
 .last-line{
     width: 1300px;
