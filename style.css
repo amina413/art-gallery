@@ -803,7 +803,7 @@ body {
 .gallery-item:nth-child(2) {
     grid-column: span 1; /* Make it span across both columns */
     grid-row: span 1; /* Make it span two rows */
-    height: 500px ;
+    /* height: 500px ; */
 }
 
 .persian-5 {
@@ -833,6 +833,7 @@ body {
     pointer-events: none;
 }
 
+
 /* Adjusting Visibility for Last 3 Images */
 .gallery-item:nth-last-child(-n+3) img {
    /* transform: translateY(20%);*/
@@ -845,6 +846,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Ensure it's above the images */
+    
 }
 
 .explore-btn {
@@ -852,13 +854,13 @@ body {
     color: black;
     border: none;
     /* padding: 10px 20px; */
-    font-size: 16px;
+    font-size: 30px;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
     transition: background 0.3s ease;
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    height: 100px;
 }
 
 .explore-btn:hover {
@@ -1206,11 +1208,15 @@ body {
     display: block;
 }
 .gallery-item2:nth-child(2) {
-    grid-column: span 1; /* Make it span across both columns */
-    grid-row: span 1; /* Make it span two rows */
-    height: 500px ;
+    /* grid-column: span 1; /* Make it span across both columns */
+    /* grid-row: span 1; Make it span two rows  */
+    /* height: 500px ; */
 }
 
+.gallery-item-m{
+    grid-column: span 1; /* Make it span across both columns */
+    grid-row: span 1; /
+}
 .persian-5 {
     margin-top: 30px;
     border-radius: 10px;
